@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Авторизация через Patreon</title></head>
+  <body>
+    <h2>Перенаправление в Telegram...</h2>
+    <p>Если вы не были перенаправлены автоматически, нажмите <a id="link" href="#">здесь</a>.</p>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code");
+      if (code) {
+        const telegramLink = `tg://resolve?domain=pep_example_bot&start=oauth_${code}`;
+        document.getElementById("link").href = telegramLink;
+        window.location.href = telegramLink;
+      } else {
+        document.body.innerHTML = "<h2>Ошибка: код не найден.</h2>";
+      }
+    </script>
+  </body>
+</html>
