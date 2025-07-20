@@ -9,7 +9,7 @@
       const params = new URLSearchParams(window.location.search);
       const code = params.get("code");
       if (code) {
-        const telegramLink = `tg://resolve?domain=pep_example_bot&start=oauth_${code}`;
+        const telegramLink = `tg://resolve?domain=Peptar_bot&start=oauth_${code}`;
         document.getElementById("link").href = telegramLink;
         window.location.href = telegramLink;
       } else {
